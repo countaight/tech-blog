@@ -1,3 +1,35 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$d-blue: #3d315b; //rgba(61, 49, 91, 100)
+$l-blue: #444b6e; //rgba(68, 75, 110, 100)
+$acc-green: #9ab87a; //rgba(154, 184, 122, 100)
+$d-gray: #646168; //rgba(100, 97, 104, 100)
+$l-gray: #f7f7f7; //rgba(247, 247, 247, 100)
+
+$h-font: 'Bree Serif', serif;
+$p-font: 'Lato', sans-serif;
+
+.main-h1 {
+	font-size: 3em;
+}
+
+article {
+	p {
+		margin: 0px;
+		font-size: 1.3em;
+	}
+	
+	h2 {
+		color: $d-gray;
+		margin-bottom: 0px;
+		a {
+			text-decoration: none;
+			color: inherit;
+			font-family: $h-font;
+			font-weight: lighter;
+			font-size: 1.5em;
+		}
+	}
+}
