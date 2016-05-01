@@ -1,0 +1,6 @@
+%h1.main-h1 Latest Articles
+
+- @articles.each do |article|
+  %article
+    %h2= link_to article.title, article_path(article)
+    %p= article.text
