@@ -1,0 +1,12 @@
+= form_for(@user) do |f|
+	- if @user.errors.any?
+		.errors= "This form contains #{pluralize(@user.errors.count, "error")}"
+		%ul
+			- @user.errors.full_messages.each do |msg|
+				%li= msg
+
+	= f.text_field :username, placeholder: "Username"
+	= f.email_field :email, placeholder: "Email"
+	= f.password_field :password, placeholder: "Password"
+	= f.password_field :password_confirmation, placeholder: "Confirm Password"
+	= f.submit "Register"
