@@ -1,6 +1,10 @@
 class ArticlesController < ApplicationController
   def index
     @articles = Article.all
+    respond_to do |format|
+      format.js 
+      format.html
+    end
   end
 
   def show
@@ -19,7 +23,11 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      redirect_to @article
+      if request.xhr?
+        render json: @article
+      else
+        redirect_to @article
+      end
     else
       render 'new'
     end
